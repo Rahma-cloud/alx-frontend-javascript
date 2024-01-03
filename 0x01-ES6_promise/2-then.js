@@ -4,14 +4,13 @@ export default function handleResponseFromAPI(promise) {
             console.log("Got a response from the API");
 
             return {
-                const result = {
-                    status: 200,
-                    body: 'Success',
-                };
+                status: 200,
+                body: 'Success',
+            };
+        })
+        .catch((error) => {
+            console.log("Got an error from the API");
 
-                resolve(result);
-            } else {
-                reject("The fake API is not working currently");
-            }
-    });
+            return new Error();
+        });
 }
