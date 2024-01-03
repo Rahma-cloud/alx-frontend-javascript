@@ -13,6 +13,6 @@ export default function handleResponseFromAPI(promise) {
         return new Error();
       });
   } else {
-    console.error('Invalid promise object');
+    console.error('');
   }
 }
