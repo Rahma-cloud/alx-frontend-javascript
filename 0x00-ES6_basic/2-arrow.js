@@ -3,6 +3,7 @@ export default function getNeighborhoodsList() {
 
   const self = this;
   this.addNeighborhood = (newNeighborhood) => {
+    /* eslint-disable no-unused-vars */
     self.sanFranciscoNeighborhoods.push(newNeighborhood);
     return self.sanFranciscoNeighborhoods;
   };
