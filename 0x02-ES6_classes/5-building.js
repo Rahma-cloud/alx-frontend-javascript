@@ -8,10 +8,6 @@ export default class Building {
   }
 
   evacuationWarningMessage() {
-    if (new.target === Building) {
-      throw new Error('Cannot instantiate abstract class Building.');
-    } else {
-      throw new Error('Class extending Building must override evacuationWarningMessage');
-    }
+    throw new Error(`Class ${this.constructor.name} Building must override evacuationWarningMessage`);
   }
 }
