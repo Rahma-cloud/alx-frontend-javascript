@@ -37,7 +37,7 @@ export default class HolbertonCourse {
   }
 
   static validateLength(length) {
-    if (typeof length === 'number') {
+    if (typeof length === 'number' && !Number.isNaN(length)) {
       return length;
     }
     throw new TypeError('Length must be a number');
