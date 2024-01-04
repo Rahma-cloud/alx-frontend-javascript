@@ -1,6 +1,6 @@
 export default function handleResponseFromAPI(promise) {
   if (promise && typeof promise.then === 'function') {
-    promise
+    return promise
       .then(() => {
         console.log('Got a response from the API');
         return {
@@ -12,7 +12,7 @@ export default function handleResponseFromAPI(promise) {
         console.log('Got a response from the API');
         return new Error();
       });
-  } else {
-    console.error('');
   }
+  console.error('');
+  return Promise.reject(new Error('Invalid promise provided'));
 }
