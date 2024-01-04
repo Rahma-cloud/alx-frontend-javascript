@@ -1,1 +1,1 @@
-# This is a file for my ES6-basic tasks
+# This is a directory for my Basicjs alx-tasks
