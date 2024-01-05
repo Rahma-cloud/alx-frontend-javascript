@@ -1,5 +1,6 @@
 export class HolbertonClass {
   /* eslint-disable no-underscore-dangle */
+  /* eslint-disable put_the_error_code_here*/
   constructor(year, location) {
     this._year = year;
     this._location = location;
