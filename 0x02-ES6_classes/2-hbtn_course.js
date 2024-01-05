@@ -1,8 +1,13 @@
 export default class HolbertonCourse {
+  /* eslint-disable no-underscore-dangle */
   constructor(name, length, students) {
     this._name = name;
     this._length = length;
     this._students = students;
+
+    HolbertonCourse.validateType(name, 'string', 'Name');
+    HolbertonCourse.validateType(length, 'number', 'Length');
+    HolbertonCourse.validateType(students, 'object', 'Students');
   }
 
   get name() {
@@ -10,7 +15,8 @@ export default class HolbertonCourse {
   }
 
   set name(newName) {
-    this._name = HolbertonCourse.validateName(newName);
+    HolbertonCourse.validateType(newName, 'string', 'Name');
+    this._name = newName;
   }
 
   get length() {
@@ -18,7 +24,8 @@ export default class HolbertonCourse {
   }
 
   set length(newLength) {
-    this._length = HolbertonCourse.validateLength(newLength);
+    HolbertonCourse.validateType(newLength, 'number', 'Length');
+    this._length = newLength;
   }
 
   get students() {
@@ -26,27 +33,14 @@ export default class HolbertonCourse {
   }
 
   set students(newStudents) {
-    this._students = HolbertonCourse.validateStudents(newStudents);
+    HolbertonCourse.validateType(newStudents, 'object', 'Students');
+    this._students = newStudents;
   }
 
-  static validateName(name) {
-    if (typeof name === 'string') {
-      return name;
+  static validateType(value, expectedType, attribute) {
+    /* eslint-disable valid-typeof */
+    if (typeof value !== expectedType) {
+      throw new TypeError(`${attribute} must be a ${expectedType}`);
     }
-    throw new TypeError('Name must be a string');
-  }
-
-  static validateLength(length) {
-    if (typeof length === 'number' && !Number.isNaN(length)) {
-      return length;
-    }
-    throw new TypeError('Length must be a number');
-  }
-
-  static validateStudents(students) {
-    if (Array.isArray(students) && students.every((student) => typeof student === 'string')) {
-      return students;
-    }
-    throw new TypeError('Students must be an array of strings');
   }
 }
