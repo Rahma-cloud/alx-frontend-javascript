@@ -1,4 +1,4 @@
-// The Currency will be used laater
+// The Currency will be used later
 import Currency from './3-currency';
 
 export default class Pricing {
@@ -28,7 +28,7 @@ export default class Pricing {
   }
 
   displayFullPrice() {
-    return `${this._amount} ${this._currency_name} (${this._currency_code})`;
+    return `${this._amount} ${this._currency._name} (${this._currency._code})`;
   }
 
   static convertPrice(amount, conversionRate) {
