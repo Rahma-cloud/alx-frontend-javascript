@@ -1,28 +1,28 @@
 const cloneSymbol = Symbol('clone');
 export default class Car {
   constructor(brand, motor, color) {
-    this._brand = brand;
-    this._motor = motor;
-    this._color = color;
+    this.brand = brand;
+    this.motor = motor;
+    this.color = color;
 
     this[cloneSymbol] = Symbol('clone');
   }
 
   get brand() {
-    return this._brand;
+    return this.brand;
   }
 
   get motor() {
-    return this._motor;
+    return this.motor;
   }
 
   get color() {
-    return this._color;
+    return this.color;
   }
 
   cloneCar() {
     const clonedCar = Object.assign(
-    Object.create(Object.getPrototypeOf(this)),
+      Object.create(Object.getPrototypeOf(this)),
       this,
     );
 
