@@ -21,8 +21,8 @@ export default class Car {
   }
 
   cloneCar() {
-    const clonedCar = object.assign(
-      object.create(object.getPrototypeOf(this)),
+    const clonedCar = Object.assign(
+    Object.create(Object.getPrototypeOf(this)),
       this,
     );
 
